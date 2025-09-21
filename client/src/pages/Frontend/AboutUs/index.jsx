@@ -9,22 +9,24 @@ import {
   Typography,
   Tag,
   Progress,
-  Modal
+  Modal,
+  Statistic
 } from 'antd';
 import { 
   TeamOutlined, 
-  RocketOutlined, 
-  TrophyOutlined, 
-  HeartOutlined,
+  HeartOutlined, 
+  DollarOutlined, 
+  GlobalOutlined,
   LinkedinOutlined,
   TwitterOutlined,
   GithubOutlined,
-  EnvironmentOutlined,
   PhoneOutlined,
   MailOutlined,
-  GlobalOutlined,
   ArrowRightOutlined,
-  PlayCircleOutlined
+  PlayCircleOutlined,
+  UserOutlined,
+  RiseOutlined,
+  CheckCircleOutlined
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 
@@ -41,43 +43,40 @@ const AboutUs = () => {
   // Team members data
   const teamMembers = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO & Founder',
+      name: 'Emma Wilson',
+      role: 'Founder & Director',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-      bio: '10+ years of industry experience with a passion for innovative solutions.',
+      bio: 'Passionate about social change with 8+ years in nonprofit leadership.',
       social: {
         linkedin: '#',
         twitter: '#',
-        github: '#'
       }
     },
     {
-      name: 'Michael Chen',
-      role: 'Lead Developer',
+      name: 'James Rodriguez',
+      role: 'Operations Manager',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-      bio: 'Full-stack developer specializing in React and Node.js applications.',
+      bio: 'Ensures our initiatives reach those who need them most.',
       social: {
         linkedin: '#',
         twitter: '#',
-        github: '#'
       }
     },
     {
-      name: 'Elena Rodriguez',
-      role: 'Product Designer',
+      name: 'Sophia Chen',
+      role: 'Community Outreach',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-      bio: 'Creating beautiful and functional user experiences for over 8 years.',
+      bio: 'Builds partnerships with local communities and organizations.',
       social: {
         linkedin: '#',
         twitter: '#',
-        github: '#'
       }
     },
     {
-      name: 'David Kim',
-      role: 'Marketing Director',
+      name: 'Marcus Johnson',
+      role: 'Technology Lead',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-      bio: 'Expert in digital marketing strategies and brand development.',
+      bio: 'Develops the platform that makes giving accessible to everyone.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -86,36 +85,36 @@ const AboutUs = () => {
     }
   ];
 
-  // Company values
+  // Values for donation app
   const values = [
     {
-      icon: <TeamOutlined className="text-3xl" />,
-      title: 'Collaboration',
-      description: 'We believe in the power of teamwork and open communication to achieve extraordinary results.'
-    },
-    {
-      icon: <RocketOutlined className="text-3xl" />,
-      title: 'Innovation',
-      description: 'We constantly push boundaries and explore new ideas to stay ahead of the curve.'
-    },
-    {
-      icon: <TrophyOutlined className="text-3xl" />,
-      title: 'Excellence',
-      description: 'We strive for the highest quality in everything we do, from product to customer service.'
-    },
-    {
       icon: <HeartOutlined className="text-3xl" />,
-      title: 'Passion',
-      description: 'We love what we do and are committed to making a positive impact through our work.'
+      title: 'Compassion',
+      description: 'We approach every project with empathy and understanding for those we serve.'
+    },
+    {
+      icon: <GlobalOutlined className="text-3xl" />,
+      title: 'Global Impact',
+      description: 'We believe in creating positive change that transcends borders and communities.'
+    },
+    {
+      icon: <CheckCircleOutlined className="text-3xl" />,
+      title: 'Transparency',
+      description: 'We maintain open books and clear reporting so donors know exactly where their money goes.'
+    },
+    {
+      icon: <RiseOutlined className="text-3xl" />,
+      title: 'Sustainability',
+      description: 'We focus on long-term solutions that create lasting change in communities.'
     }
   ];
 
-  // Skills data
-  const skills = [
-    { name: 'Product Design', percent: 92 },
-    { name: 'Web Development', percent: 88 },
-    { name: 'Mobile Applications', percent: 85 },
-    { name: 'Data Analytics', percent: 78 }
+  // Impact statistics
+  const impactStats = [
+    { number: '250K+', text: 'Lives Impacted' },
+    { number: '45+', text: 'Countries Reached' },
+    { number: '98%', text: 'Funds Donated Directly to Causes' },
+    { number: '500+', text: 'Projects Funded' }
   ];
 
   const showModal = () => {
@@ -143,22 +142,22 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Crafting Digital Excellence</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Making Giving Simple & Impactful</h1>
             <p className="text-xl opacity-90 mb-10">
-              We are a team of passionate creators, designers, and developers dedicated to building extraordinary digital experiences.
+              We connect generous donors with meaningful causes to create positive change in communities around the world.
             </p>
             <Button 
               size="large" 
               className="bg-white text-teal-600 border-0 font-semibold h-12 px-8 rounded-full hover:bg-teal-50 transition-all duration-300"
               icon={<ArrowRightOutlined />}
             >
-              Explore Our Work
+              Donate Now
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Company Story Section */}
+      {/* Mission Section */}
       <section className="py-20 container mx-auto px-4">
         <Row gutter={[48, 48]} className="items-center">
           <Col xs={24} lg={12}>
@@ -167,16 +166,16 @@ const AboutUs = () => {
               animate={loaded ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR STORY</Tag>
-              <Title level={2} className="font-bold mb-6">From Vision to Reality</Title>
+              <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR MISSION</Tag>
+              <Title level={2} className="font-bold mb-6">Empowering Generosity, Transforming Lives</Title>
               <Paragraph className="text-lg text-gray-700 mb-6">
-                Founded in 2015, our company began as a small startup with a big vision: to transform the way businesses 
-                leverage technology for growth. What started as a team of three working out of a garage has now grown into 
-                a thriving organization with over 50 employees.
+                Founded in 2017, our donation platform was created with one simple goal: to make giving accessible, 
+                transparent, and impactful. We believe that everyone should have the opportunity to make a difference, 
+                no matter the size of their contribution.
               </Paragraph>
               <Paragraph className="text-lg text-gray-700 mb-6">
-                Throughout our journey, we've remained committed to our core principles of innovation, quality, and 
-                customer satisfaction. We've had the privilege of working with amazing clients across various industries.
+                We've built a trusted platform where 98% of every donation goes directly to the causes you care about, 
+                with minimal overhead costs. Our technology ensures that your generosity reaches those who need it most.
               </Paragraph>
               <div className="flex items-center mt-10">
                 <Button 
@@ -186,13 +185,13 @@ const AboutUs = () => {
                   onClick={showModal}
                   icon={<PlayCircleOutlined />}
                 >
-                  Watch Our Story
+                  Our Story
                 </Button>
                 <Button 
                   size="large" 
                   className="h-12 px-8 rounded-lg font-semibold transition-colors duration-300"
                 >
-                  Read More
+                  See Impact
                 </Button>
               </div>
             </motion.div>
@@ -208,23 +207,47 @@ const AboutUs = () => {
                 <div className="h-96 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl overflow-hidden">
                   <div className="h-full flex items-center justify-center text-white text-center p-8">
                     <div>
-                      <div className="text-6xl font-bold mb-2">6+</div>
-                      <div className="text-xl">Years of Excellence</div>
+                      <div className="text-6xl font-bold mb-2">5+</div>
+                      <div className="text-xl">Years of Service</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg w-40">
-                <div className="text-teal-600 font-bold text-2xl">150+</div>
-                <div className="text-gray-600">Projects</div>
+                <div className="text-teal-600 font-bold text-2xl">$15M+</div>
+                <div className="text-gray-600">Donations</div>
               </div>
               <div className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-lg w-40">
                 <div className="text-teal-600 font-bold text-2xl">98%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
+                <div className="text-gray-600">To Causes</div>
               </div>
             </motion.div>
           </Col>
         </Row>
+      </section>
+
+      {/* Impact Stats Section */}
+      <section className="py-16 bg-teal-50">
+        <div className="container mx-auto px-4">
+          <Row gutter={[32, 32]}>
+            {impactStats.map((stat, index) => (
+              <Col xs={24} sm={12} md={6} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={loaded ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <Statistic
+                    value={stat.number}
+                    valueStyle={{ color: '#0d9488', fontSize: '42px', fontWeight: 'bold' }}
+                  />
+                  <div className="text-lg text-gray-600 mt-2">{stat.text}</div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </div>
       </section>
 
       {/* Values Section */}
@@ -237,9 +260,9 @@ const AboutUs = () => {
             className="text-center max-w-2xl mx-auto mb-16"
           >
             <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR VALUES</Tag>
-            <Title level={2} className="font-bold mb-4">What We Stand For</Title>
+            <Title level={2} className="font-bold mb-4">What Guides Our Work</Title>
             <Text className="text-lg text-gray-600">
-              Our core values guide everything we do, from product development to client relationships.
+              These core principles shape everything we do, from selecting partners to distributing funds.
             </Text>
           </motion.div>
           
@@ -269,8 +292,18 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* How It Works Section */}
       <section className="py-20 container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={loaded ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
+          <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR PROCESS</Tag>
+          <Title level={2} className="font-bold mb-4">How Your Donation Makes an Impact</Title>
+        </motion.div>
+        
         <Row gutter={[48, 48]}>
           <Col xs={24} lg={12}>
             <motion.div 
@@ -278,27 +311,32 @@ const AboutUs = () => {
               animate={loaded ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR EXPERTISE</Tag>
-              <Title level={2} className="font-bold mb-6">Skills & Technologies</Title>
-              <Paragraph className="text-lg text-gray-700 mb-10">
-                We leverage cutting-edge technologies and methodologies to deliver exceptional results across various domains.
-              </Paragraph>
-              
-              {skills.map((skill, index) => (
-                <div key={index} className="mb-6">
-                  <div className="flex justify-between mb-2">
-                    <Text className="font-semibold">{skill.name}</Text>
-                    <Text className="text-teal-600 font-semibold">{skill.percent}%</Text>
+              {[
+                {
+                  title: "1. You Donate",
+                  description: "Choose from vetted causes and make a secure donation through our platform."
+                },
+                {
+                  title: "2. We Verify",
+                  description: "Our team carefully reviews each organization and project to ensure legitimacy."
+                },
+                {
+                  title: "3. Funds Distributed",
+                  description: "98% of your donation goes directly to the cause, with minimal processing fees."
+                },
+                {
+                  title: "4. Impact Created",
+                  description: "Receive updates on how your contribution is making a tangible difference."
+                }
+              ].map((step, index) => (
+                <div key={index} className="mb-10 flex">
+                  <div className="bg-teal-100 text-teal-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-6">
+                    {index + 1}
                   </div>
-                  <Progress 
-                    percent={skill.percent} 
-                    showInfo={false} 
-                    strokeColor={{
-                      '0%': '#0d9488',
-                      '100%': '#0891b2',
-                    }}
-                    className="h-3 rounded-full"
-                  />
+                  <div>
+                    <Title level={4} className="font-semibold mb-2">{step.title}</Title>
+                    <Text className="text-gray-600">{step.description}</Text>
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -310,21 +348,18 @@ const AboutUs = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl p-8 h-full text-white"
             >
-              <Title level={3} className="text-white font-bold mb-6">Why Choose Us?</Title>
+              <Title level={3} className="text-white font-bold mb-6">Financial Transparency</Title>
               
-              <div className="space-y-6">
+              <div className="space-y-6 mb-8">
                 {[
-                  "End-to-end solutions from concept to deployment",
-                  "Agile development methodology",
-                  "Continuous support and maintenance",
-                  "User-centered design approach",
-                  "Cross-platform compatibility",
-                  "Data-driven decision making"
+                  "98% of donations go directly to programs",
+                  "1% covers payment processing fees",
+                  "1% supports platform maintenance",
+                  "Annual independent financial audits",
+                  "Real-time donation tracking"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="bg-teal-400 bg-opacity-20 p-2 rounded-full mr-4">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
-                    </div>
+                    <CheckCircleOutlined className="text-teal-200 mr-4 mt-1" />
                     <Text className="text-white text-opacity-90 text-lg">{item}</Text>
                   </div>
                 ))}
@@ -332,81 +367,14 @@ const AboutUs = () => {
               
               <Button 
                 size="large" 
-                className="mt-10 bg-white text-teal-600 border-0 font-semibold h-12 px-8 rounded-lg hover:bg-teal-50 transition-all duration-300"
+                className="mt-6 bg-white text-teal-600 border-0 font-semibold h-12 px-8 rounded-lg hover:bg-teal-50 transition-all duration-300"
               >
-                Our Process
+                View Financial Reports
               </Button>
             </motion.div>
           </Col>
         </Row>
       </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={loaded ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-2xl mx-auto mb-16"
-          >
-            <Tag color="teal" className="mb-4 text-sm font-semibold px-3 py-1">OUR TEAM</Tag>
-            <Title level={2} className="font-bold mb-4">Meet The Experts</Title>
-            <Text className="text-lg text-gray-600">
-              Our talented team of professionals brings diverse expertise and a shared commitment to excellence.
-            </Text>
-          </motion.div>
-          
-          <Row gutter={[32, 32]}>
-            {teamMembers.map((member, index) => (
-              <Col xs={24} sm={12} lg={6} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={loaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <Card 
-                    className="text-center border-0 shadow-md hover:shadow-xl transition-all duration-300 h-full rounded-2xl overflow-hidden"
-                    cover={
-                      <div className="h-64 bg-gradient-to-br from-teal-400 to-cyan-500 relative overflow-hidden">
-                        <Avatar 
-                          size={160} 
-                          src={member.avatar} 
-                          className="absolute inset-0 m-auto border-4 border-white shadow-lg"
-                        />
-                      </div>
-                    }
-                  >
-                    <Title level={4} className="mt-6 mb-1">{member.name}</Title>
-                    <Text type="secondary" className="text-teal-600 font-semibold">{member.role}</Text>
-                    <Paragraph className="mt-4 text-gray-600">{member.bio}</Paragraph>
-                    
-                    <div className="flex justify-center space-x-3 mt-6">
-                      <Button 
-                        type="text" 
-                        icon={<LinkedinOutlined className="text-teal-600" />} 
-                        className="rounded-full w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-teal-300"
-                      />
-                      <Button 
-                        type="text" 
-                        icon={<TwitterOutlined className="text-teal-600" />} 
-                        className="rounded-full w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-teal-300"
-                      />
-                      <Button 
-                        type="text" 
-                        icon={<GithubOutlined className="text-teal-600" />} 
-                        className="rounded-full w-10 h-10 flex items-center justify-center border border-gray-200 hover:border-teal-300"
-                      />
-                    </div>
-                  </Card>
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-teal-500 to-cyan-600 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -416,43 +384,25 @@ const AboutUs = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl mx-auto"
           >
-            <Title level={2} className="text-white font-bold mb-6">Ready to Start Your Project?</Title>
+            <Title level={2} className="text-white font-bold mb-6">Join Us in Making a Difference</Title>
             <Paragraph className="text-xl opacity-90 mb-10">
-              Let's collaborate to bring your ideas to life with our expertise and innovative approach.
+              Your donation, no matter the size, can transform lives and create lasting change in communities worldwide.
             </Paragraph>
             <Button 
               size="large" 
-              className="bg-white text-teal-600 border-0 font-semibold h-12 px-8 rounded-lg mr-4 hover:bg-teal-50 transition-all duration-300"
+              className="bg-white  text-teal-600 border-0 font-semibold h-12 px-8 rounded-lg mr-4 hover:bg-teal-50 transition-all duration-300"
             >
-              Get in Touch
+              Donate Now
             </Button>
             <Button 
               size="large" 
               className="bg-transparent text-white border-white h-12 px-8 rounded-lg hover:bg-white hover:text-teal-600 transition-all duration-300"
             >
-              View Our Work
+              Partner With Us
             </Button>
           </motion.div>
         </div>
-      </section>
-
-      {/* Video Modal */}
-      <Modal
-        title="Our Story"
-        visible={isModalVisible}
-        onCancel={handleCancel}
-        footer={null}
-        width={720}
-        bodyStyle={{ padding: 0 }}
-        className="rounded-lg overflow-hidden"
-      >
-        <div className="h-96 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-white">
-          <div className="text-center">
-            <PlayCircleOutlined className="text-6xl mb-4" />
-            <div className="text-xl">Company Story Video</div>
-          </div>
-        </div>
-      </Modal>
+      </section>      
     </div>
   );
 };

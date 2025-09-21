@@ -1,12 +1,16 @@
 import React from 'react'
 import Hero from './Hero'
-import WhyChooseUs from './WhyChooseUs'
+import DonationCard from './DonationCard'
+import Newsletter from './Newsletter'
+import Campaigns from '../Campiagn'
 
 const Home = () => {
   return (
     <div>
       <Hero />
-      {/* <WhyChooseUs /> */}
+      <Campaigns />
+      <DonationCard />
+      <Newsletter />
     </div>
   )
 }

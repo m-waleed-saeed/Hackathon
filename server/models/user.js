@@ -7,7 +7,7 @@ const userSchema = new Schema(
         lastName: { type: String, trim: true },
         email: { type: String, required: true, unique: true, lowercase: true, trim: true },
         password: { type: String, required: true },
-        role: { type: String, enum: ['admin', 'user'], default: 'user', },
+        role: { type: String, enum: ['ngo', 'donor'], default: 'donor', },
         phone: { type: String, trim: true },
         address: { type: String, trim: true },
         resetPasswordToken: { type: String },

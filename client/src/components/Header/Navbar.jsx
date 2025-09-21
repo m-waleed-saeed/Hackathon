@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import {
   MenuOutlined,
   UserOutlined,
-  SearchOutlined,
-  BellOutlined,
-  SettingOutlined,
+  SearchOutlined, 
   LogoutOutlined,
   ShoppingOutlined
 } from '@ant-design/icons';
@@ -15,7 +13,7 @@ import { logout } from '../../redux/userSlice';
 
 
 
-const ProfessionalNavbar = () => {
+const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentMenu, setCurrentMenu] = useState('home');
 
@@ -35,9 +33,9 @@ const ProfessionalNavbar = () => {
     {
       key: 'my-orders',
       icon: <ShoppingOutlined />,
-      label: 'My Orders',
+      label: 'My Donations',
       onClick: () => {
-        navigate('/my-orders');
+        navigate('/my-donations');
       },
     },
     {
@@ -55,14 +53,14 @@ const ProfessionalNavbar = () => {
   ];
 
   const navItems = [
-    { key: 'home', label: 'Home' },
-    { key: 'products', label: 'Products' },
-    { key: 'about', label: 'About Us' },
-    { key: 'contact', label: 'Contact' },
+    { key: 'home',path:'/', label: 'Home' },
+    { key: 'products',path:'/campaigns', label: 'Campaigns' },
+    { key: 'about',path:'/about-us', label: 'About Us' },
+    { key: 'contact',path:'/contact-us', label: 'Contact' },
   ];
 
   return (
-    <nav className="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-teal-600 shadow-lg border-b border-gray-200 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
@@ -76,7 +74,7 @@ const ProfessionalNavbar = () => {
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="logo pt-3">Weedies</h1>
+              <h1 className="logo pt-3 !text-white">Donate And Care</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -88,21 +86,15 @@ const ProfessionalNavbar = () => {
                     ? 'text-blue-600 bg-blue-50'
                     : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                     }`}
-                  onClick={() => setCurrentMenu(item.key)}
+                  onClick={() => {
+                    setCurrentMenu(item.key);
+                    navigate(item.path);
+                  }}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="hidden lg:block flex-1 max-w-xs mx-8">
-            <Input
-              placeholder="Search..."
-              prefix={<SearchOutlined className="text-gray-400" />}
-              className="rounded-full"
-            />
           </div>
 
           <div className="flex items-center space-x-4">
@@ -172,4 +164,4 @@ const ProfessionalNavbar = () => {
   );
 };
 
-export default ProfessionalNavbar;
+export default Navbar;

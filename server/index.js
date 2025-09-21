@@ -4,10 +4,12 @@ dotenv.config();
 const connectDB = require('./config/db');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
-const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
 const contactRoutes = require('./routes/contact');
 const heroRoutes = require('./routes/hero');
+const subscriberRoutes = require('./routes/subscriber');
+const campaignRoutes = require('./routes/campaign');
+const donorRoutes = require('./routes/donor');
 
 const { PORT } = process.env;
 
@@ -18,11 +20,12 @@ app.use(cors());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/campaigns', campaignRoutes);
+app.use('/api/donor', donorRoutes);
 app.use('/api/hero', heroRoutes);
 
-app.use('/api/products', productRoutes);
-
 app.use("/api/contacts", contactRoutes);
+app.use("/api/subscribers", subscriberRoutes);
 
 
 

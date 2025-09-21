@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -13,19 +13,19 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 const customTheme = {
   token: {
-    colorPrimary: "#00927c",
-    colorTextBase: "#2d3436",
-    colorSuccess: "#00c853",
-    colorError: "#d32f2f",
-    colorWarning: "#fbc02d",
-    colorInfo: "#0288d1",
+    colorPrimary: "#1abc9c",      // Trust / Action (donate now)
+    colorTextBase: "#34495e",     // Dark text for readability
+    colorSuccess: "#2ecc71",      // Donation success
+    colorError: "#e74c3c",        // Error / problem
+    colorWarning: "#f1c40f",      // Attention
+    colorInfo: "#3498db",         // Info / updates
 
-    colorBgBase: "#f9f9f9",
-    colorBgContainer: "#ffffff",
+    colorBgBase: "#fefefe",       // Light clean background
+    colorBgContainer: "#ffffff",  // Cards / containers
 
     fontFamily: "Poppins, Roboto, sans-serif",
     fontSize: 16,
-    borderRadius: 12,
+    borderRadius: 10,             // Slightly soft edges
   },
 };
 createRoot(document.getElementById('root')).render(
